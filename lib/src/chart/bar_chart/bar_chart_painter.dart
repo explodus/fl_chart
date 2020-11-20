@@ -55,7 +55,7 @@ class BarChartPainter extends AxisChartPainter<BarChartData> with TouchHandler<B
 
     drawBars(canvasWrapper, _groupBarsPosition);
     drawAxisTitles(canvasWrapper);
-    _drawTitles(canvasWrapper, _groupBarsPosition);
+    drawTitles(canvasWrapper, _groupBarsPosition);
 
     for (int i = 0; i < targetData.barGroups.length; i++) {
       final barGroup = targetData.barGroups[i];
@@ -345,7 +345,8 @@ class BarChartPainter extends AxisChartPainter<BarChartData> with TouchHandler<B
     }
   }
 
-  void _drawTitles(CanvasWrapper canvasWrapper, List<GroupBarsPosition> groupBarsPosition) {
+  @visibleForTesting
+  void drawTitles(CanvasWrapper canvasWrapper, List<GroupBarsPosition> groupBarsPosition) {
     if (!targetData.titlesData.show) {
       return;
     }

@@ -27,7 +27,8 @@ void main() {
         data,
         (s) {},
       );
-      expect(barChartPainter.getChartUsableDrawSize(viewSize), const Size(644, 728));
+      expect(barChartPainter.getChartUsableDrawSize(viewSize),
+          const Size(644, 728));
     });
 
     test('test 2', () {
@@ -46,7 +47,8 @@ void main() {
         data,
         (s) {},
       );
-      expect(barChartPainter.getChartUsableDrawSize(viewSize), const Size(1958, 2020));
+      expect(barChartPainter.getChartUsableDrawSize(viewSize),
+          const Size(1958, 2020));
     });
 
     test('test 3', () {
@@ -55,7 +57,8 @@ void main() {
       final BarChartData data = BarChartData(
           titlesData: FlTitlesData(
         leftTitles: SideTitles(showTitles: false),
-        rightTitles: SideTitles(reservedSize: 100, margin: 400, showTitles: true),
+        rightTitles:
+            SideTitles(reservedSize: 100, margin: 400, showTitles: true),
         topTitles: SideTitles(showTitles: false),
         bottomTitles: SideTitles(showTitles: false),
       ));
@@ -65,7 +68,8 @@ void main() {
         data,
         (s) {},
       );
-      expect(barChartPainter.getChartUsableDrawSize(viewSize), const Size(500, 1000));
+      expect(barChartPainter.getChartUsableDrawSize(viewSize),
+          const Size(500, 1000));
     });
 
     test('test 4', () {
@@ -76,7 +80,8 @@ void main() {
         leftTitles: SideTitles(showTitles: false),
         rightTitles: SideTitles(reservedSize: 10, margin: 0, showTitles: true),
         topTitles: SideTitles(reservedSize: 230, margin: 10, showTitles: true),
-        bottomTitles: SideTitles(reservedSize: 10, margin: 312, showTitles: true),
+        bottomTitles:
+            SideTitles(reservedSize: 10, margin: 312, showTitles: true),
       ));
 
       final BarChartPainter barChartPainter = BarChartPainter(
@@ -84,7 +89,8 @@ void main() {
         data,
         (s) {},
       );
-      expect(barChartPainter.getChartUsableDrawSize(viewSize), const Size(790, 438));
+      expect(barChartPainter.getChartUsableDrawSize(viewSize),
+          const Size(790, 438));
     });
 
     test('test 5', () {
@@ -93,9 +99,11 @@ void main() {
       final BarChartData data = BarChartData(
           titlesData: FlTitlesData(
         leftTitles: SideTitles(reservedSize: 0, margin: 0, showTitles: true),
-        rightTitles: SideTitles(reservedSize: 10, margin: 342134123, showTitles: false),
+        rightTitles:
+            SideTitles(reservedSize: 10, margin: 342134123, showTitles: false),
         topTitles: SideTitles(reservedSize: 80, margin: 0, showTitles: true),
-        bottomTitles: SideTitles(reservedSize: 10, margin: 312, showTitles: false),
+        bottomTitles:
+            SideTitles(reservedSize: 10, margin: 312, showTitles: false),
       ));
 
       final BarChartPainter barChartPainter = BarChartPainter(
@@ -103,7 +111,8 @@ void main() {
         data,
         (s) {},
       );
-      expect(barChartPainter.getChartUsableDrawSize(viewSize), const Size(600, 320));
+      expect(barChartPainter.getChartUsableDrawSize(viewSize),
+          const Size(600, 320));
     });
   });
 
@@ -119,13 +128,17 @@ void main() {
       // groupSpace = 23.0
       final painter = BarChartPainter(data, data, (touchHandler) {});
       final barGroups = [
-        barChartGroupData1, // Widths = [32, 32, 32, 32], barSpace = 23, sumWidth = 197
-        barChartGroupData2, // Widths = [32, 32, 32, 32], barSpace = 23, sumWidth = 197
-        barChartGroupData3, // Widths = [32, 32, 32, 32], barSpace = 23, sumWidth = 197
+        barChartGroupData1,
+        // Widths = [32, 32, 32, 32], barSpace = 23, sumWidth = 197
+        barChartGroupData2,
+        // Widths = [32, 32, 32, 32], barSpace = 23, sumWidth = 197
+        barChartGroupData3,
+        // Widths = [32, 32, 32, 32], barSpace = 23, sumWidth = 197
       ]; // Sum Width = 637
       const size = Size(800, 20);
 
-      final xValues = painter.calculateGroupsX(size, barGroups, BarChartAlignment.center);
+      final xValues =
+          painter.calculateGroupsX(size, barGroups, BarChartAlignment.center);
       expect(xValues, [
         closeTo(180, delta),
         closeTo(400, delta),
@@ -142,13 +155,17 @@ void main() {
       // groupSpace = 23.0
       final painter = BarChartPainter(data, data, (touchHandler) {});
       final barGroups = [
-        barChartGroupData1, // Widths = [32, 32, 32, 32], barSpace = 23, sumWidth = 197
-        barChartGroupData2, // Widths = [32, 32, 32, 32], barSpace = 23, sumWidth = 197
-        barChartGroupData3, // Widths = [32, 32, 32, 32], barSpace = 23, sumWidth = 197
+        barChartGroupData1,
+        // Widths = [32, 32, 32, 32], barSpace = 23, sumWidth = 197
+        barChartGroupData2,
+        // Widths = [32, 32, 32, 32], barSpace = 23, sumWidth = 197
+        barChartGroupData3,
+        // Widths = [32, 32, 32, 32], barSpace = 23, sumWidth = 197
       ]; // Sum Width = 637
       const size = Size(800, 20);
 
-      final xValues = painter.calculateGroupsX(size, barGroups, BarChartAlignment.spaceAround);
+      final xValues = painter.calculateGroupsX(
+          size, barGroups, BarChartAlignment.spaceAround);
       expect(xValues, [
         closeTo(133.33, delta),
         closeTo(400, delta),
@@ -165,13 +182,17 @@ void main() {
       // groupSpace = 23.0
       final painter = BarChartPainter(data, data, (touchHandler) {});
       final barGroups = [
-        barChartGroupData1, // Widths = [32, 32, 32, 32], barSpace = 23, sumWidth = 197
-        barChartGroupData2, // Widths = [32, 32, 32, 32], barSpace = 23, sumWidth = 197
-        barChartGroupData3, // Widths = [32, 32, 32, 32], barSpace = 23, sumWidth = 197
+        barChartGroupData1,
+        // Widths = [32, 32, 32, 32], barSpace = 23, sumWidth = 197
+        barChartGroupData2,
+        // Widths = [32, 32, 32, 32], barSpace = 23, sumWidth = 197
+        barChartGroupData3,
+        // Widths = [32, 32, 32, 32], barSpace = 23, sumWidth = 197
       ]; // Sum Width = 637
       const size = Size(800, 20);
 
-      final xValues = painter.calculateGroupsX(size, barGroups, BarChartAlignment.start);
+      final xValues =
+          painter.calculateGroupsX(size, barGroups, BarChartAlignment.start);
       expect(xValues, [
         closeTo(98.5, delta),
         closeTo(295.5, delta),
@@ -189,14 +210,19 @@ void main() {
     // groupSpace = 23.0
     final painter = BarChartPainter(data, data, (touchHandler) {});
     final barGroups = [
-      barChartGroupData1, // Widths = [32, 32, 32, 32], barSpace = 23, sumWidth = 197
-      barChartGroupData2, // Widths = [32, 32, 32, 32], barSpace = 23, sumWidth = 197
-      barChartGroupData3, // Widths = [32, 32, 32, 32], barSpace = 23, sumWidth = 197
+      barChartGroupData1,
+      // Widths = [32, 32, 32, 32], barSpace = 23, sumWidth = 197
+      barChartGroupData2,
+      // Widths = [32, 32, 32, 32], barSpace = 23, sumWidth = 197
+      barChartGroupData3,
+      // Widths = [32, 32, 32, 32], barSpace = 23, sumWidth = 197
     ]; // Sum Width = 637
     const size = Size(800, 20);
 
-    final groupXValues = painter.calculateGroupsX(size, barGroups, BarChartAlignment.center);
-    final groupBarsXValues = painter.calculateGroupAndBarsPosition(size, groupXValues, barGroups);
+    final groupXValues =
+        painter.calculateGroupsX(size, barGroups, BarChartAlignment.center);
+    final groupBarsXValues =
+        painter.calculateGroupAndBarsPosition(size, groupXValues, barGroups);
     expect(groupBarsXValues, [
       GroupBarsPosition(180, [97.5, 152.5, 207.5, 262.5]),
       GroupBarsPosition(400, [317.5, 372.5, 427.5, 482.5]),
@@ -205,7 +231,6 @@ void main() {
   });
 
   group('drawBars test', () {
-
     final BarChartRodData barChartRodData1 = BarChartRodData(
       colors: [Colors.red],
       y: 12,
@@ -254,13 +279,12 @@ void main() {
     );
 
     final data = barChartData1.copyWith(
-      titlesData: FlTitlesData(show: false),
-      axisTitleData: FlAxisTitleData(show: false),
-      minY: 0,
-      barGroups: [
-        barChartGroupData1,
-      ]
-    );
+        titlesData: FlTitlesData(show: false),
+        axisTitleData: FlAxisTitleData(show: false),
+        minY: 0,
+        barGroups: [
+          barChartGroupData1,
+        ]);
 
     final painter = BarChartPainter(data, data, (touchHandler) {});
 
@@ -330,9 +354,10 @@ void main() {
     });
 
     test('test barStack draw', () {
-
-      final stackRect1 = Rect.fromLTRB(284, painter.getPixelY(2, size), 316, painter.getPixelY(1, size));
-      final stackRect2 = Rect.fromLTRB(284, painter.getPixelY(4, size), 316, painter.getPixelY(2, size));
+      final stackRect1 = Rect.fromLTRB(
+          284, painter.getPixelY(2, size), 316, painter.getPixelY(1, size));
+      final stackRect2 = Rect.fromLTRB(
+          284, painter.getPixelY(4, size), 316, painter.getPixelY(2, size));
 
       verifyInOrder([
         // Stack 1 on Bar 1
@@ -347,6 +372,105 @@ void main() {
         canvasWrapper.restore(),
       ]);
     });
+  });
 
+  group('drawTitles test', () {
+    final data = barChartData1.copyWith(
+        titlesData: FlTitlesData(
+          show: true,
+          leftTitles: SideTitles(getTitles: (value) => '$value ss', interval: 1),
+        ),
+        axisTitleData: FlAxisTitleData(show: false),
+        minY: 0,
+        barGroups: [
+          barChartGroupData1,
+        ]);
+
+    final painter = BarChartPainter(data, data, (touchHandler) {});
+
+    final groupBarsPosition = [
+      GroupBarsPosition(400, [300, 500]),
+    ];
+
+    const size = Size(800, 400);
+
+    final canvasWrapper = MockCanvasWrapper();
+
+    when(canvasWrapper.size).thenReturn(size);
+
+    painter.drawBars(canvasWrapper, groupBarsPosition);
+
+    final bar1BackDrawRRect = RRect.fromLTRBAndCorners(
+      284,
+      painter.getPixelY(21, size),
+      316,
+      painter.getPixelY(0, size),
+      topLeft: const Radius.circular(12),
+      topRight: const Radius.circular(12),
+      bottomLeft: const Radius.circular(12),
+      bottomRight: const Radius.circular(12),
+    );
+
+    final bar1RRect = RRect.fromLTRBAndCorners(
+      284,
+      painter.getPixelY(12, size),
+      316,
+      painter.getPixelY(0, size),
+      topLeft: const Radius.circular(12),
+      topRight: const Radius.circular(12),
+      bottomLeft: const Radius.circular(12),
+      bottomRight: const Radius.circular(12),
+    );
+
+    final bar2BackDrawRRect = RRect.fromLTRBAndCorners(
+      484,
+      painter.getPixelY(21, size),
+      516,
+      painter.getPixelY(0, size),
+      topLeft: const Radius.circular(12),
+      topRight: const Radius.circular(12),
+      bottomLeft: const Radius.circular(12),
+      bottomRight: const Radius.circular(12),
+    );
+
+    final bar2RRect = RRect.fromLTRBAndCorners(
+      484,
+      painter.getPixelY(233, size),
+      516,
+      painter.getPixelY(0, size),
+      topLeft: const Radius.circular(12),
+      topRight: const Radius.circular(12),
+      bottomLeft: const Radius.circular(12),
+      bottomRight: const Radius.circular(12),
+    );
+
+    test('test barRod draw', () {
+      verifyInOrder([
+        canvasWrapper.drawRRect(bar1BackDrawRRect, any),
+        canvasWrapper.drawRRect(bar1RRect, any),
+        canvasWrapper.drawRRect(bar2BackDrawRRect, any),
+        canvasWrapper.drawRRect(bar2RRect, any),
+      ]);
+    });
+
+    test('test barStack draw', () {
+      final stackRect1 = Rect.fromLTRB(
+          284, painter.getPixelY(2, size), 316, painter.getPixelY(1, size));
+      final stackRect2 = Rect.fromLTRB(
+          284, painter.getPixelY(4, size), 316, painter.getPixelY(2, size));
+
+      verifyInOrder([
+        // Stack 1 on Bar 1
+        canvasWrapper.save(),
+        canvasWrapper.clipRect(stackRect1),
+        canvasWrapper.drawRRect(bar1RRect, any),
+        canvasWrapper.restore(),
+        // Stack 2 on Bar 1
+        canvasWrapper.save(),
+        canvasWrapper.clipRect(stackRect2),
+        canvasWrapper.drawRRect(bar1RRect, any),
+        canvasWrapper.restore(),
+      ]);
+    });
   });
 }
